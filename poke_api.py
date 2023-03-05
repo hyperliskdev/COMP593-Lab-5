@@ -5,8 +5,6 @@ from pastebin_api import post_new_paste
 
 POKE_API_URL = 'https://pokeapi.co/api/v2/'
 
-
-
 def get_pokemon(pokemon):
     
     search_string = "pokemon/" + str(pokemon)
@@ -48,8 +46,10 @@ def main():
 
     data = construct_paste(pokemon)
     
-    print(str(post_new_paste(data[0], data[1])))
+    poke_url = post_new_paste(data[0], data[1], '1H')
     
+    if poke_url != None:
+        print(poke_url)
     
 if __name__ == "__main__":
     main()

@@ -34,7 +34,7 @@ def post_new_paste(title, body, exp='10M', listed=True):
     # Verify response
     if resp_msg.status_code == requests.codes.ok:
         print('success')
-        return resp_msg
+        return resp_msg.text
     else:
         print('failure')
         print(f'response code: {resp_msg.status_code} ({resp_msg.reason})')
